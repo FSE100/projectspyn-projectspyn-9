@@ -1,0 +1,1 @@
+DisconnectBrick("UDER"); % Disconnects the brick.
