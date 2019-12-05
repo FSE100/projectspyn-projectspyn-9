@@ -20,13 +20,13 @@ while reading == 0
     if color == 5 && color == 3 && color == 4
         Testcolor;
     end
-    
+    if reading == 1
+            touchDemo;
+    end
     
 end
 
-if reading == 1
-            touchDemo;
-end
+
    
 
     
