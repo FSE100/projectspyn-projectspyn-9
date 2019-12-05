@@ -1,0 +1,66 @@
+        color = brick.ColorCode(3); 
+        display(color);
+        while color ~= 0
+            if color == 5 && color == 3 && color == 4
+            Testcolor;
+            end
+        end
+         brick.StopAllMotors('Brake');
+         pause(.1);
+         brick.MoveMotorAngleRel('D', 35, 367, 'Brake');
+        pause(.1);
+        brick.WaitForMotor('D');
+         brick.StopAllMotors('Brake');
+         pause(.1);
+         leftdistance = brick.UltrasonicDist(2);
+         display(leftdistance);
+        brick.MoveMotorAngleRel('D', 35, -723, 'Brake');
+        pause(.1);
+        brick.WaitForMotor('D');
+        brick.StopAllMotors('Brake');
+         pause(.1);
+         rightdistance = brick.UltrasonicDist(2);
+         display(rightdistance);
+         brick.StopAllMotors('Brake');
+         pause(.1);
+        brick.MoveMotorAngleRel('D', 35, 367, 'Brake');
+        pause(.2);
+        brick.WaitForMotor('D');
+         brick.StopAllMotors('Brake');
+         pause(.3);
+         forwarddistance = brick.UltrasonicDist(2);
+         display(forwarddistance);
+         
+        if leftdistance < 45 && rightdistance < 45 && forwarddistance < 45
+        brick.StopAllMotors('Brake');
+        pause(3);
+        brick.MoveMotorAngleRel('D', 35, -720, 'Brake');
+        
+        brick.WaitForMotor('D');
+       % brick.StopAllMotors('Brake');
+        %pause(3);
+       brick.MoveMotor('A', 30.5);
+       brick.MoveMotor('D', 30);
+       pause(4);
+         elseif  leftdistance > rightdistance && leftdistance > forwarddistance
+            brick.MoveMotorAngleRel('D', 35, 367, 'Brake');
+        pause(2);
+        brick.WaitForMotor('D');
+          brick.MoveMotor('A', 30.5);
+          brick.MoveMotor('D', 30);
+          pause(4); 
+        elseif forwarddistance > rightdistance && forwarddistance > leftdistance
+           brick.MoveMotor('A', 30.5);
+           brick.MoveMotor('D', 30);
+           pause(4);
+         
+        elseif rightdistance > leftdistance && rightdistance > forwarddistance
+             brick.MoveMotorAngleRel('A', 35, 365, 'Brake');
+            pause(2);
+            brick.WaitForMotor('A');
+           brick.MoveMotor('A', 30.5);
+           brick.MoveMotor('D', 30);
+           pause(4);
+       
+        end
+

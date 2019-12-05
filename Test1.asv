@@ -1,66 +1,35 @@
-
-
- 
 distance = brick.UltrasonicDist(2);
 display(distance);
-
-
-while distance >= 630
+reading = brick.TouchPressed(1);
+display(reading);
+while reading == 0
     distance = brick.UltrasonicDist(2);
     display(distance);
     
-    
-    brick.MoveMotor('AD', 30);     % Motor A forward at half speed.
-    pause(1); 
-    color = brick.ColorCode(3);  % Get Color on port 1.
+    reading = brick.TouchPressed(1);
+    display(reading);
+    color = brick.ColorCode(3); 
     display(color);
-    if color == 5
-        brick.StopAllMotors('Brake');
-             pause(4);
-        brick.MoveMotor('AD', 30);
-    elseif color == 3
-        brick.StopAllMotors('Brake');
-             pause(4);
-        brick.MoveMotor('AD', 30);
-    elseif color == 4
-        brick.StopAllMotors('Brake');
-             pause(4);
-        brick.MoveMotor('AD', 30);
+    if distance > 45
+        TestForward;
+    elseif distance < 37
+        distance = brick.UltrasonicDist(2);
+        display(distance);
+        Testturning;
     end
     
     
-    if distance < 500
-      brick.StopAllMotors('Brake');
+    if color == 5 && color == 3 && color == 4
+        Testcolor;
     end
-end 
+    
+    
+end
+
+if reading == 1
+            touchDemo;
+end
    
 
-    if distance > 500
-         brick.MoveMotor('A', -25);
-         brick.MoveMotor('D', 25);
-         pause(1);
-         brick.StopAllMotors('Brake');
-         leftdistance = brick.UltrasonicDist(2);
-         display(leftdistance);
-         brick.MoveMotor('D', -50);
-         brick.MoveMotor('A', 50);
-         pause(1);
-         brick.StopAllMotors('Brake');
-         rightdistance = brick.UltrasonicDist(2);
-         display(rightdistance);
-        elseif leftdistance > 500
-             brick.MoveMotor('AD', 40);
-             pause(1);
-         
-        elseif distance > 600
-             brick.MoveMotor('AD', 40);
-             pause(1);
-        else 
-        brick.MoveMotor('AD', 40);
-        pause(1);
-    end
     
-
-
-
-    
+   
