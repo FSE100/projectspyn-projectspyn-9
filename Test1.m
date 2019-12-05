@@ -17,7 +17,7 @@ while reading == 0
     end
     
     
-    if color == 5 && color == 3 && color == 4
+    if color == 5 || color == 3 || color == 2
         Testcolor;
     end
     if reading == 1
