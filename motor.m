@@ -5,6 +5,7 @@
 %brick.MoveMotor('AB', 10);    % Move both motors A and B at 10%
 %pause(1);                     % Let the motors turn for 1 second.
 %brick.MoveMotor('AB', 0);     % Stop both motors A and B 
-brick.MoveMotorAngleRel('D', 35, -723, 'Brake');
+brick.MoveMotor('A', 30.5);
+pause(2);
  brick.StopAllMotors('Brake');
    % Hard Stop, all motors.

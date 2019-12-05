@@ -1,6 +1,6 @@
     color = brick.ColorCode(3); 
     display(color);
-    while color ~= 0
+   
     if color == 5
         brick.StopAllMotors('Brake');
         pause(4);
@@ -18,4 +18,4 @@
         brick.StopAllMotors('Brake');
         keyMove;
     end
-    end
+   

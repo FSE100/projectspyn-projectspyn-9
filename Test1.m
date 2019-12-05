@@ -10,24 +10,21 @@ while reading == 0
     display(reading);
     color = brick.ColorCode(3); 
     display(color);
-    if distance > 55
+    if distance > 35
         TestForward;
-    elseif distance < 50
+    elseif distance < 30
         Testturning;
     end
     
+    if color == 5 || color == 3 || color ==2
+       Testturning; 
+    end
+
     
-    if color == 5 || color == 3 || color == 2
-        Testcolor;
-    end
-    if reading == 1
-            touchDemo;
-    end
     
 end
 
-
-   
-
-    
+if reading == 1
+            touchDemo;
+end
    

@@ -13,14 +13,14 @@ while distance > 55
      Testturning;
      color = brick.ColorCode(3); 
     display(color);
-    if color == 5 || color == 3 || color == 2
-    Testcolor;
+    if color == 5 || color == 3 || color ==2
+               Testturning; 
     end
-    if distance < 35 
+    
+end
+if distance < 35 
     brick.StopAllMotors('Brake');
     Testturning;
-    end
-    if reading == 1
+elseif reading == 1
             touchDemo;
-    end
 end
