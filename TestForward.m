@@ -3,7 +3,7 @@ display(distance);
 while distance > 35       
     brick.MoveMotor('A', 40.5);
      brick.MoveMotor('D', 40);
-     pause(1); 
+     pause(1.2); 
     distance = brick.UltrasonicDist(2);
      display(distance);
      brick.StopMotor('AD');
