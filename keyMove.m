@@ -6,13 +6,13 @@ while 1
         switch key
             case 'uparrow'
                 brick.MoveMotor('A', 30.5);
-                brick.MoveMotor('D', 20);
+                brick.MoveMotor('D', 30);
       
                 disp('Up Arrow Pressed!');
                 
             case 'downarrow'
                 brick.MoveMotor('A', -30.5);
-                brick.MoveMotor('D', -20);
+                brick.MoveMotor('D', -30);
                 disp('Down arrow Pressed!');
                 
             case 'leftarrow'

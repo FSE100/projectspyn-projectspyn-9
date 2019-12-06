@@ -10,8 +10,8 @@
         
         brick.MoveMotor('C', -.5);
         pause(1);
-        brick.MoveMotor('A', -20.5);
-        brick.MoveMotor('D', -20);
+        brick.MoveMotor('A', -30.5);
+        brick.MoveMotor('D', -30);
         pause(1.5);
         brick.StopAllMotors('Brake');
     elseif color ==2
