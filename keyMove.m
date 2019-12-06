@@ -35,11 +35,11 @@ while 1
                 Test1;
             break;
             case 'e'
-                brick.MoveMotor('C', .5);
+                brick.MoveMotor('C', 3);
                 pause(1);
                 
             case 'r'
-                brick.MoveMotor('C', -.5);
+                brick.MoveMotor('C', -3);
                 pause(1);
         end
 

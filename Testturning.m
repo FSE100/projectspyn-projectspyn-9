@@ -1,4 +1,5 @@
-        color = brick.ColorCode(3); 
+    brick.SetColorMode(3, 2);    
+    color = brick.ColorCode(3); 
         display(color);
     
         if color == 5 || color == 3 || color == 2
@@ -42,6 +43,13 @@
        brick.MoveMotor('A', 30.5);
        brick.MoveMotor('D', 30);
        pause(1.5);
+       brick.SetColorMode(3, 2);    
+    color = brick.ColorCode(3); 
+        display(color);
+    
+        if color == 5 || color == 3 || color == 2
+            Testcolor;
+        end
          elseif  leftdistance > rightdistance && leftdistance > forwarddistance
             brick.MoveMotorAngleRel('D', 40, 367, 'Brake');
         pause(2);
@@ -49,10 +57,24 @@
           brick.MoveMotor('A', 30.5);
           brick.MoveMotor('D', 30);
           pause(1.5); 
+          brick.SetColorMode(3, 2);    
+    color = brick.ColorCode(3); 
+        display(color);
+    
+        if color == 5 || color == 3 || color == 2
+            Testcolor;
+        end
         elseif forwarddistance > rightdistance && forwarddistance > leftdistance
            brick.MoveMotor('A', 30.5);
            brick.MoveMotor('D', 30);
            pause(1.5);
+           brick.SetColorMode(3, 2);    
+    color = brick.ColorCode(3); 
+        display(color);
+    
+        if color == 5 || color == 3 || color == 2
+            Testcolor;
+        end
          
         elseif rightdistance > leftdistance && rightdistance > forwarddistance
              brick.MoveMotorAngleRel('A', 50, 360, 'Brake');
@@ -61,6 +83,13 @@
            brick.MoveMotor('A', 30.5);
            brick.MoveMotor('D', 30);
            pause(1.5);
+           brick.SetColorMode(3, 2);    
+    color = brick.ColorCode(3); 
+        display(color);
+    
+        if color == 5 || color == 3 || color == 2
+            Testcolor;
+        end
        
         end
 
